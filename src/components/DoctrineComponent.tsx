@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { FaBook, FaCross, FaPray, FaChurch } from 'react-icons/fa';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
-import { motion, AnimatePresence } from 'framer-motion'; // Import motion and AnimatePresence
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 
 const doctrineData = [
   {
@@ -51,32 +51,33 @@ export default function DoctrineComponent() {
   };
 
   // Animation variants for the title/text section
-  const titleVariants = {
+  const titleVariants: Variants = { // Optionally type this too for consistency
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, staggerChildren: 0.2 } },
   };
 
   // Animation variants for the carousel cards
-  const cardVariants = {
+  // Explicitly type cardVariants as Variants
+  const cardVariants: Variants = {
     enter: (direction: number) => ({
-      x: direction > 0 ? '100%' : '-100%', // Use percentage for better responsiveness
+      x: direction > 0 ? '100%' : '-100%',
       opacity: 0,
-      position: 'absolute', // Keep exiting element positioned absolutely
-      width: '100%', // Ensure it takes full width during transition
+      position: 'absolute', // TypeScript should now accept this within Variants
+      width: '100%',
     }),
     center: {
       zIndex: 1,
       x: 0,
       opacity: 1,
-      position: 'relative', // Current element is relative
+      position: 'relative', // TypeScript should now accept this within Variants
       width: '100%',
     },
     exit: (direction: number) => ({
       zIndex: 0,
-      x: direction < 0 ? '100%' : '-100%', // Use percentage
+      x: direction < 0 ? '100%' : '-100%',
       opacity: 0,
-      position: 'absolute', // Keep exiting element positioned absolutely
-      width: '100%', // Ensure it takes full width during transition
+      position: 'absolute', // TypeScript should now accept this within Variants
+      width: '100%',
     }),
   };
 
@@ -104,28 +105,7 @@ export default function DoctrineComponent() {
             <motion.div
               key={currentIndex} // Key change triggers animation
               custom={direction}
-              variants={{
-                enter: (direction: number) => ({
-                  x: direction > 0 ? '100%' : '-100%',
-                  opacity: 0,
-                  position: 'absolute' as const,
-                  width: '100%'
-                }),
-                center: {
-                  zIndex: 1,
-                  x: 0,
-                  opacity: 1,
-                  position: 'relative' as const,
-                  width: '100%'
-                },
-                exit: (direction: number) => ({
-                  zIndex: 0,
-                  x: direction < 0 ? '100%' : '-100%',
-                  opacity: 0,
-                  position: 'absolute' as const,
-                  width: '100%'
-                })
-              }}
+              variants={cardVariants} // Apply the variants here
               initial="enter"
               animate="center"
               exit="exit"

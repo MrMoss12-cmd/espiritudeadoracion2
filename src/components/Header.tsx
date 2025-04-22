@@ -1,8 +1,6 @@
 'use client';
-
-import React from 'react';
+import React  from 'react';
 import Link from 'next/link';
-import { FaFacebook, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import StreamingButton from './StreamingButton';
 
 const Header: React.FC = () => {

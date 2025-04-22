@@ -1,43 +1,22 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const metadata: Metadata = {
-  title: "Espíritu de Adoración",
-  description: "Iglesia Espíritu de Adoración - Transformando vidas",
-};
+import { GeistSans } from 'geist/font/sans'
+import './globals.css'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import Script from 'next/script' // Import the Script component
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="es">
-      <head>
-        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
-      >
+    <html lang="en">
+      <body className={GeistSans.className}>
         <Header />
-        <main className="flex-grow">
-          {children}
-        </main>
+        {children}
         <Footer />
+        <Script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js" strategy="beforeInteractive" />
       </body>
     </html>
-  );
+  )
 }

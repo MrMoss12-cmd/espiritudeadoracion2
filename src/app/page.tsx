@@ -1,4 +1,5 @@
-import Image from 'next/image'
+// Remove this line as Image is not used directly in this file
+// import Image from 'next/image'
 import Hero from '../components/Hero'
 import VisionMisionComponent from '../components/VisionMisionComponent'
 import DoctrineComponent from '../components/DoctrineComponent'
