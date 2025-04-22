@@ -96,7 +96,7 @@ export default function Hero() {
               animate="visible"
               variants={textVariants}
             >
-              We trust in<br />God's Love
+              We trust in<br />God&apos;s Love {/* Replace ' with &apos; here */}
             </motion.h1>
             <motion.p
               className="text-gray-200 max-w-lg"
