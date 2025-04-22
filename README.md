@@ -81,9 +81,15 @@ yarn build
 
 This will create a .next folder with the production-ready application. You can then start the production server using npm start or yarn start .
 
-(Optional: Add sections for Deployment, Contributing, License, etc. if needed)
+## Author
+- [Elias Higuera Acosta](https://www.linkedin.com/in/el%C3%ADas-higuera-acosta-/) - Profile work - My Linkeind Profile URL 
 
-```plaintext
+## Contributing
+Contributions are welcome! If you have suggestions for improving the website, please feel free to:
 
-Remember to replace placeholders like `<your-repository-url>` if applicable and add any other specific details you think are important.
- ```
+1. Fork the Project
+2. Create your Feature Branch ( git checkout -b feature/AmazingFeature )
+3. Commit your Changes ( git commit -m 'Add some AmazingFeature' )
+4. Push to the Branch ( git push origin feature/AmazingFeature )
+5. Open a Pull Request
+You can also open an issue with the tag "enhancement" or "bug".
