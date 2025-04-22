@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import styles from './Hero.module.css';
-import { motion } from 'framer-motion'; // Import motion
+import { motion } from 'framer-motion';
 
 export default function Hero() {
   const interBubbleRef = useRef<HTMLDivElement>(null);
