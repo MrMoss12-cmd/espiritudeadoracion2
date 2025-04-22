@@ -1,0 +1,3 @@
+[build]
+  command = "npm run build" # This command tells Next.js to build everything, including page.tsx
+  publish = ".next"         # This tells Netlify where the finished build output is located
